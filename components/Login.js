@@ -9,12 +9,15 @@ function Login() {
 
   const dispatch = useDispatch()
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [signupOpen, setSignupOpen] = useState(false);
+  const [signinOpen, setSigninOpen] = useState(false);
   const [firstnameUp, setFirstnameUp] = useState('')
   const [usernameUp, setUsernameUp] = useState('')
   const [passwordUp, setPasswordUp] = useState('')
+  const [usernameIn, setUsernameIn] = useState('')
+  const [passwordIn, setPasswordIn] = useState('')
 
-  const handleSubmit = () => {
+  const handleSignup = () => {
     fetch('http://localhost:3000/users/signup', {
       method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -22,20 +25,46 @@ function Login() {
     })
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         dispatch(login({ username: usernameUp, firstname:firstnameUp,  token: data.token }))
+        setPasswordUp('');
+        setUsernameUp('');
+        setFirstnameUp('')
+        setSignupOpen(false)
       })
   }
 
+  const handleSignin = () => {
+    fetch('http://localhost:3000/users/signin', {
+      method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ username: usernameIn, password: passwordIn }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        dispatch(login({ username: usernameIn, firstname:data.firstname,  token: data.token }))
+        setPasswordIn('');
+        setUsernameIn('');
+        setSigninOpen(false)
+      })
+  }
+
+  const handleCancel = () => {
+    setSignupOpen(false);
+    setSigninOpen(false)
+  };
+
   return (
     <div className={styles.container}>
-      <img src='loginPage.jpg' alt="login page" />
+      <img className={styles.background} src='background.png' alt="login page" />
       <div className={styles.btnContainer}>
-        <img src='logo.webp' alt="logo" />
+        <img src='logo.png' alt="logo" />
         <h2>See what's happening</h2>
         <span>Join Hackatweet today.</span>
-        <Button type='primary' onClick={()=>setIsModalOpen(true)} >Sign up</Button>
-        <Modal title="Basic Modal" open={isModalOpen} footer={[
-          <Button key="back" onClick={handleSubmit}>
+        <Button type='primary' onClick={()=>setSignupOpen(true)} >Sign up</Button>
+        <Modal title="Basic Modal" open={signupOpen} onCancel={handleCancel} footer={[
+          <Button key="back" onClick={handleSignup}>
             Sign up
           </Button>
         ]}>
@@ -44,7 +73,15 @@ function Login() {
         <input onChange={e=>setPasswordUp(e.target.value)} value={passwordUp} placeholder='Password'/>
       </Modal>
         <span>Already have an account?</span>
-        <Button>Sign in</Button>
+        <Button type='primary' onClick={()=>setSigninOpen(true)}>Sign in</Button>
+        <Modal title="Basic Modal" open={signinOpen} onCancel={handleCancel} footer={[
+          <Button key="back" onClick={handleSignin}>
+            Sign in
+          </Button>
+        ]}>
+        <input onChange={e=>setUsernameIn(e.target.value)} value={usernameIn} placeholder='Username'/>
+        <input onChange={e=>setPasswordIn(e.target.value)} value={passwordIn} placeholder='Password'/>
+      </Modal>
       </div>
     </div>
   );

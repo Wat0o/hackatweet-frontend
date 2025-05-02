@@ -1,0 +1,16 @@
+.btnContainer {
+    background-color: #151D26;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 66vw;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+.background {
+    background-size: cover;
+}

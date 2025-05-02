@@ -5,6 +5,7 @@ import Login from '../components/Login';
 
 function LoginPage() {
   const userInfo = useSelector((state) => state.user.value);
+  console.log(userInfo)
   const router = useRouter();
 
   useEffect(() => {
