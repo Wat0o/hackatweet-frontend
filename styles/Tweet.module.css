@@ -4,10 +4,6 @@
   transition: background-color 0.2s;
 }
 
-.tweet:hover {
-  background-color: #f8f9fa;
-}
-
 .author {
   font-weight: bold;
   margin-bottom: 10px;
@@ -36,4 +32,8 @@
 
 .actions button:hover {
   background-color: #f0f0f0;
+}
+
+.btnLike {
+  color: white;
 }

@@ -73,9 +73,7 @@ function Home() {
             <button onClick={handleTweetSubmit}>Tweeter</button>
           </div>
         </div>
-        <div className={styles.tweetContainer}>
-          <LastTweets tweets={tweets} setTweets={setTweets} currentUser={user} />
-        </div>
+        <LastTweets tweets={tweets} setTweets={setTweets} currentUser={user} />    
       </div>
 
       {/* Section droite */}
