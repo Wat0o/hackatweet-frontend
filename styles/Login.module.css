@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: column;
     width: 66vw;
+    align-items: left;
+    justify-content: center;
 }
 
 .container {
@@ -13,4 +15,29 @@
 
 .background {
     background-size: cover;
+    width: 40vw;
+}
+
+.logo {
+    height:50px;
+    width:50px;
+    rotate: 180deg;
+}
+
+.btn {
+    width: 100px;
+    margin:20px;
+}
+
+.modalContent {
+    background-color: #151D26;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal {
+    background-color: #151D26;
 }

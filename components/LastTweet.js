@@ -2,8 +2,13 @@ import styles from '../styles/LastTweet.module.css';
 import Tweet from './Tweet';
 
 function LastTweets({ tweets, setTweets, currentUser }) {
+  
   const handleDelete = (tweetId) => {
-    setTweets(tweets.filter(tweet => tweet.id !== tweetId));
+    fetch(`http://localhost:3000/tweets/${tweetId}`, {
+      method: 'DELETE'
+    }).then(()=>{
+      setTweets(tweets.filter(tweet => tweet.id !== tweetId));
+    })
   };
 
   const handleLike = (tweetId) => {

@@ -1,5 +1,5 @@
 .trends {
-  background-color: #f8f9fa;
+  background-color: #1b232c;
   border-radius: 15px;
   padding: 20px;
 }
@@ -26,7 +26,7 @@
 }
 
 .hashtagItem:hover {
-  background-color: #eee;
+  background-color: #232d3a;
 }
 
 .hashtagItem span:first-child {

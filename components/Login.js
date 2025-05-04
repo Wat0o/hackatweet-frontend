@@ -59,29 +59,37 @@ function Login() {
     <div className={styles.container}>
       <img className={styles.background} src='background.png' alt="login page" />
       <div className={styles.btnContainer}>
-        <img src='logo.png' alt="logo" />
+        <img src='logo.png' alt="logo" className={styles.logo} />
         <h2>See what's happening</h2>
         <span>Join Hackatweet today.</span>
-        <Button type='primary' onClick={()=>setSignupOpen(true)} >Sign up</Button>
-        <Modal title="Basic Modal" open={signupOpen} onCancel={handleCancel} footer={[
+        <Button type='primary' className={styles.btn} onClick={() => setSignupOpen(true)} >Sign up</Button>
+        <Modal className={styles.modal} open={signupOpen} onCancel={handleCancel} footer={[
           <Button key="back" onClick={handleSignup}>
             Sign up
           </Button>
         ]}>
-        <input onChange={e=>setFirstnameUp(e.target.value)} value={firstnameUp} placeholder='Firstname'/>
-        <input onChange={e=>setUsernameUp(e.target.value)} value={usernameUp} placeholder='Username'/>
-        <input onChange={e=>setPasswordUp(e.target.value)} value={passwordUp} placeholder='Password'/>
-      </Modal>
+          <div className={styles.modalContent}>
+            <img src='logo.png' alt="logo" className={styles.logo} />
+            <span>Create your Hacktweet account</span>
+            <input onChange={e => setFirstnameUp(e.target.value)} value={firstnameUp} placeholder='Firstname' />
+            <input onChange={e => setUsernameUp(e.target.value)} value={usernameUp} placeholder='Username' />
+            <input onChange={e => setPasswordUp(e.target.value)} type="password" value={passwordUp} placeholder='Password' />
+          </div>
+        </Modal>
         <span>Already have an account?</span>
-        <Button type='primary' onClick={()=>setSigninOpen(true)}>Sign in</Button>
-        <Modal title="Basic Modal" open={signinOpen} onCancel={handleCancel} footer={[
+        <Button type='primary' onClick={() => setSigninOpen(true)} className={styles.btn}>Sign in</Button>
+        <Modal className={styles.modal} open={signinOpen} onCancel={handleCancel} footer={[
           <Button key="back" onClick={handleSignin}>
             Sign in
           </Button>
         ]}>
-        <input onChange={e=>setUsernameIn(e.target.value)} value={usernameIn} placeholder='Username'/>
-        <input onChange={e=>setPasswordIn(e.target.value)} value={passwordIn} placeholder='Password'/>
-      </Modal>
+          <div className={styles.modalContent}>
+            <img src='logo.png' alt="logo" className={styles.logo} />
+            <span>Connect to Hackatweet</span>
+            <input onChange={e => setUsernameIn(e.target.value)} value={usernameIn} placeholder='Username' />
+            <input onChange={e => setPasswordIn(e.target.value)} type="password" value={passwordIn} placeholder='Password' />
+          </div>
+        </Modal>
       </div>
     </div>
   );
