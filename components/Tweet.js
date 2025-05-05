@@ -28,7 +28,7 @@ function Tweet({ tweet, onDelete, onLike, isUserTweet, currentUser }) {
               {console.log(tweet)}
               <p className={styles.firtsname}>{tweet.firstname}</p>
               <p className={styles.author}>@{tweet.author}</p>
-              <p>{moment(new Date(parseInt(tweet.id))).fromNow()}</p>
+              <p className={styles.date}>• {moment(new Date(parseInt(tweet.id))).fromNow()}</p>
             </div>
             <p className={styles.content}>{parseTweetContent(tweet.content)}</p>
             <div className={styles.actions}>

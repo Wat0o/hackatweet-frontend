@@ -5,8 +5,17 @@
 }
 
 .author {
+  font-weight: normal;
+  color: #8899A6; /* Couleur grisée pour le @username */
+}
+
+.firstname {
   font-weight: bold;
   color: white;
+}
+
+.date {
+  color: #8899A6;
 }
 
 .content {
@@ -45,9 +54,9 @@
 }
 
 .profil {
-  height:50px;
+  height: 50px;
   width: 50px;
-  object-fit:cover;
-  border-radius:50%;
+  object-fit: cover;
+  border-radius: 50%;
   margin: 10px;
 }

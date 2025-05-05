@@ -44,6 +44,7 @@ button {
   border-radius: 17px;
   font-weight: 700;
   height: 30px;
+  padding: 10px 10px;
 }
 
 .Modal .ant-modal-close {

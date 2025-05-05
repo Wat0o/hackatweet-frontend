@@ -62,7 +62,7 @@ function Home() {
               <p>@{user.username}</p>
             </div>
           </div>
-          <button onClick={handleLogout}>Logout</button>
+          <button className={styles.logout} onClick={handleLogout}>Logout</button>
         </div>
       </div>
 
@@ -78,8 +78,8 @@ function Home() {
             maxLength={280}
           />
           <div className={styles.tweetControls}>
-            <span>{280 - tweetContent.length} caractères restants</span>
-            <button onClick={handleTweetSubmit}>Tweeter</button>
+            <span className={styles.contentLeft}>{tweetContent.length} / 280</span>
+            <button className={styles.tweetButton} onClick={handleTweetSubmit}>Tweeter</button>
           </div>
         </div>
         <LastTweets tweets={tweets} setTweets={setTweets} currentUser={user} />    

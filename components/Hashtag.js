@@ -51,7 +51,7 @@ function HashtagPage() {
                             <p>@{user.username}</p>
                         </div>
                     </div>
-                    <button onClick={handleLogout}>Logout</button>
+                    <button className={styles.logout} onClick={handleLogout}>Logout</button>
                 </div>
             </div>
 
