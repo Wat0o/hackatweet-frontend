@@ -11,7 +11,7 @@ function HashtagPage() {
 
   useEffect(() => {
     if (!userInfo.token) {
-      router.push(`/hashtag/${hashtag}`);
+      router.push(`/login`);
     }
   }, [userInfo, router]);
 
