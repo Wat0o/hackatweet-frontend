@@ -56,7 +56,7 @@ function Home() {
       </Link>
         <div className={styles.userInfo}>
           <div className={styles.profil}>
-            <img src='profil.webp' alt='profil picture' className={styles.profilPic} />
+            <img src='/profil.webp' alt='profil picture' className={styles.profilPic} />
             <div className={styles.name}>
               <p>{user.firstname}</p>
               <p>@{user.username}</p>
