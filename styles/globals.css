@@ -14,3 +14,49 @@ body {
 button {
   font-family: inherit;
 }
+
+.Modal .ant-modal-content {
+  background-color: #151D26;
+}
+
+.Modal .ant-modal-header {
+  background-color: #151D26;
+  color: white;
+}
+
+.Modal .ant-modal-footer {
+  background-color: #151D26;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.input {
+  background-color: #151D26;
+  color: white;
+  border-color: #434d58;
+  height: 35px;
+  padding-left: 10px;
+}
+
+.submit {
+  width: 200px;
+  border-radius: 17px;
+  font-weight: 700;
+  height: 35px;
+}
+
+.Modal .ant-modal-close {
+  color: white;
+}
+
+.signup {
+  background-color: #368fe8;
+}
+
+.signin {
+  background-color: #151d28;
+  border: 1px solid !important;
+  border-color: #313c47 !important;
+  color: #1981fa;
+}

@@ -5,7 +5,27 @@
     flex-direction: column;
     width: 66vw;
     align-items: left;
-    justify-content: center;
+    padding-left: 30px;
+    padding-bottom: 300px;
+    padding-top: 20px;
+}
+
+.btnContainer h2 {
+    font-size: 70px;
+    width: 400px;
+    font-weight: 1000;
+    margin: 50px 0;
+}
+
+.join {
+    font-size: 30px;
+    font-weight: 1000;
+    margin-bottom: 20px;
+}
+
+.already {
+    font-weight: 700;
+    margin: 15px 0;
 }
 
 .container {
@@ -14,19 +34,14 @@
 }
 
 .background {
-    background-size: cover;
+    object-fit: cover;
     width: 40vw;
 }
 
 .logo {
-    height:50px;
-    width:50px;
+    height:80px;
+    width:80px;
     rotate: 180deg;
-}
-
-.btn {
-    width: 100px;
-    margin:20px;
 }
 
 .modalContent {
@@ -36,8 +51,11 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    gap:10px;
 }
 
-.modal {
-    background-color: #151D26;
+.modalContent span {
+    font-weight: 750;
+    font-size: 23px;
 }
+
