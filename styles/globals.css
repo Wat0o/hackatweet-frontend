@@ -40,10 +40,10 @@ button {
 }
 
 .submit {
-  width: 160px;
+  width: 200px;
   border-radius: 17px;
   font-weight: 700;
-  height: 30px;
+  height: 35px;
 }
 
 .Modal .ant-modal-close {
