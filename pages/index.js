@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import Home from '../components/Home';
+import Home from '../components/Home' ;
 
 function Index() {
   const userInfo = useSelector((state) => state.user.value);
@@ -13,7 +13,7 @@ function Index() {
     }
   }, [userInfo, router]);
 
-  return userInfo.token ? <Home /> : null;
+  return userInfo.token ? <Home /> : null; 
 }
 
 export default Index;
