@@ -4,11 +4,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import LastTweets from './LastTweet'
 import styles from '../styles/Hashtag.module.css'
 import Trends from './Trends'
+import Link from 'next/link'
+import {logout} from '../reducers/user'
 
 function HashtagPage() {
     const router = useRouter();
     const { hashtag } = router.query;
     const [tweets, setTweets] = useState([]);
+    const [allTweets, setAllTweets] = useState([])
     const [input, setInput] = useState('')
     const user = useSelector((state)=>state.user.value)
     const dispatch = useDispatch()
@@ -21,31 +24,58 @@ function HashtagPage() {
             .then(data => setTweets(data));
     }, [hashtag]);
 
-      const handleLogout = () => { 
-        dispatch(logout())
-      };
+    useEffect(()=>{
+        fetch('http://localhost:3000/tweets')
+        .then(response=>response.json())
+        .then(data=> {
+          setAllTweets(data.data)
+        })
+    },[])
+
+    const handleLogout = () => { 
+    dispatch(logout())
+    };
 
     return (
         <main className={styles.container}>
             {/* Section gauche */}
             <div className={styles.leftSection}>
-                <img src="/logo.png" alt="Logo" onClick={() => window.location.reload()} className={styles.logo} />
+                <Link href={`/`}>
+                    <img src="/logo.png" alt="Logo" className={styles.logo} />
+                </Link>
                 <div className={styles.userInfo}>
-                    <p>{user.username}</p>
+                    <div className={styles.profil}>
+                        <img src='/profil.webp' alt='profil picture' className={styles.profilPic} />
+                        <div className={styles.name}>
+                            <p>{user.firstname}</p>
+                            <p>@{user.username}</p>
+                        </div>
+                    </div>
                     <button onClick={handleLogout}>Logout</button>
                 </div>
             </div>
 
             {/* Section centrale */}
             <div className={styles.middleSection}>
-                <h2>Hashtag</h2>
-                <input onChange={e => setInput(e.target.value)} value={input} />
+                <div className={styles.inputContainer}>
+                    <h2>Hashtag</h2>
+                    <input onChange={e => setInput(e.target.value)} value={input} placeholder="Rechercher un hashtag"
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                const cleaned = input.trim().replace(/^#/, '');
+                                if (cleaned) {
+                                    router.push(`/hashtag/${cleaned.toLowerCase()}`);
+                                    setInput('');
+                                }
+                            }
+                        }} />
+                </div>
                 <LastTweets tweets={tweets} setTweets={setTweets} currentUser={user} />
             </div>
 
             {/* Section droite */}
             <div className={styles.rightSection}>
-                <Trends tweets={tweets} />
+                <Trends tweets={allTweets} />
             </div>
         </main>
     );

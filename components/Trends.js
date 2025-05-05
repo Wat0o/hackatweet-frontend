@@ -1,5 +1,6 @@
 import styles from '../styles/Trends.module.css';
 import { useMemo } from 'react';
+import Link from "next/link"
 
 function Trends({ tweets }) {
   const hashtags = useMemo(() => {
@@ -21,10 +22,12 @@ function Trends({ tweets }) {
       <h2>Trends</h2>
       <div className={styles.hashtagList}>
         {hashtags.map(({ hashtag, count }) => (
-          <div key={hashtag} className={styles.hashtagItem}>
-            <span>{hashtag}</span>
-            <span>{count}</span>
-          </div>
+          <Link href={`/hashtag/${hashtag.slice(1)}`}>
+            <div key={hashtag} className={styles.hashtagItem}>
+              <span>{hashtag}</span>
+              <span>{count} tweets</span>
+            </div>
+          </Link>
         ))}
       </div>
     </div>

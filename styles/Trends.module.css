@@ -1,6 +1,5 @@
 .trends {
-  background-color: #1b232c;
-  border-radius: 15px;
+
   padding: 20px;
 }
 
@@ -14,12 +13,15 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  background-color: #1b232c;
+  border-radius: 15px;
 }
 
 .hashtagItem {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   padding: 10px;
   border-radius: 10px;
   transition: background-color 0.2s;
@@ -27,16 +29,16 @@
 
 .hashtagItem:hover {
   background-color: #232d3a;
+  cursor: pointer;
 }
 
 .hashtagItem span:first-child {
-  color: #1da1f2;
-  font-weight: 500;
+  color: white;
+  font-weight: 1000;
 }
 
 .hashtagItem span:last-child {
-  background-color: #1da1f2;
-  color: white;
+  color: #55626e;
   padding: 3px 8px;
   border-radius: 10px;
   font-size: 14px;

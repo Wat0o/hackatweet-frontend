@@ -35,7 +35,6 @@ function LastTweets({ tweets, setTweets, currentUser }) {
 
   return (
       <div className={styles.lastTweets}>
-        <h2>Last Tweets</h2>
         <div className={styles.tweetsList}>
           {tweets.map(tweet => (
               <Tweet

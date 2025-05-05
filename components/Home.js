@@ -4,6 +4,7 @@ import LastTweets from './LastTweet';
 import Trends from './Trends';
 import {useDispatch, useSelector } from 'react-redux'
 import { logout } from '../reducers/user'
+import Link from 'next/link'
 
 function Home() {
 
@@ -50,7 +51,9 @@ function Home() {
     <main className={styles.container}>
       {/* Section gauche */}
       <div className={styles.leftSection}>
-        <img src="/logo.png" alt="Logo" onClick={() => window.location.reload()} className={styles.logo} />
+      <Link href={`/`}>
+        <img src="/logo.png" alt="Logo" className={styles.logo} />
+      </Link>
         <div className={styles.userInfo}>
           <div className={styles.profil}>
             <img src='profil.webp' alt='profil picture' className={styles.profilPic} />

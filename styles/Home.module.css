@@ -20,10 +20,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-right:2px solid;
+  border-right-color: #363e47;
 }
 
 .rightSection {
   width:30vw;
+  border-left:2px solid;
+  border-left-color: #363e47;
 }
 
 .middleSection {
@@ -52,5 +56,11 @@
 .profil {
   display: flex;
   align-items: center;
+}
+
+.tweetInput {
+  border-bottom:2px solid;
+  border-bottom-color: #363e47;
+  padding: 10px;
 }
 
