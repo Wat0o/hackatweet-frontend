@@ -25,7 +25,7 @@ button {
 }
 
 .Modal .ant-modal-footer {
-  background-color: #151D26;
+  background-color:  #151D26; 
   display: flex;
   justify-content: center;
   width: 100%;
@@ -43,12 +43,8 @@ button {
   width: 200px;
   border-radius: 17px;
   font-weight: 700;
-<<<<<<< HEAD
   height: 30px;
   padding: 10px 10px;
-=======
-  height: 35px;
->>>>>>> 792075a687cee4993b05627724b7311aeaad762c
 }
 
 .Modal .ant-modal-close {
@@ -60,7 +56,7 @@ button {
 }
 
 .signin {
-  background-color: #151d28;
+  background-color:  #151d28;
   border: 1px solid !important;
   border-color: #313c47 !important;
   color: #1981fa;
