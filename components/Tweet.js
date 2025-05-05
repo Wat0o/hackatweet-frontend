@@ -1,5 +1,6 @@
 import styles from '../styles/Tweet.module.css';
 import Link from 'next/link'
+import moment from 'moment'
 
 function Tweet({ tweet, onDelete, onLike, isUserTweet, currentUser }) {
 
@@ -12,7 +13,7 @@ function Tweet({ tweet, onDelete, onLike, isUserTweet, currentUser }) {
             const hashtag = word.slice(1);
             return (
               <Link key={i} href={`/hashtag/${hashtag}`}>
-                <span style={{ color: 'blue' }}>{word} </span>
+                <span style={{ color: 'blue' , cursor: 'pointer'}}>{word} </span>
               </Link>
             );
           }
@@ -22,7 +23,12 @@ function Tweet({ tweet, onDelete, onLike, isUserTweet, currentUser }) {
 
     return (
         <div className={styles.tweet}>
-            <p className={styles.author}>{tweet.author.username}</p>
+            <div className={styles.authorContainer}>
+              <img className={styles.profil} src='profil.webp' alt='profil picture'/>
+              <p className={styles.firtsname}>{tweet.firstname}</p>
+              <p className={styles.author}>@{tweet.author}</p>
+              <p>{moment(new Date(parseInt(tweet.id))).fromNow()}</p>
+            </div>
             <p className={styles.content}>{parseTweetContent(tweet.content)}</p>
             <div className={styles.actions}>
                 <button onClick={() => onLike(tweet.id)} style={likeStyle} className={styles.btnLike}>

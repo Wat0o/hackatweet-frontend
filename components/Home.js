@@ -33,7 +33,7 @@ function Home() {
       fetch('http://localhost:3000/tweets', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: tweetContent, author: user.username }),
+        body: JSON.stringify({ content: tweetContent, author: user.username, firstname: user.firstname }),
       }).then(response => response.json())
       .then(data => {
         setTweets([data.tweet, ...tweets]);
@@ -52,7 +52,13 @@ function Home() {
       <div className={styles.leftSection}>
         <img src="/logo.png" alt="Logo" onClick={() => window.location.reload()} className={styles.logo} />
         <div className={styles.userInfo}>
-          <p>{user.username}</p>
+          <div className={styles.profil}>
+            <img src='profil.webp' alt='profil picture' className={styles.profilPic} />
+            <div className={styles.name}>
+              <p>{user.firstname}</p>
+              <p>@{user.username}</p>
+            </div>
+          </div>
           <button onClick={handleLogout}>Logout</button>
         </div>
       </div>

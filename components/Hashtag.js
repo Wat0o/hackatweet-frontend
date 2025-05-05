@@ -21,7 +21,7 @@ function HashtagPage() {
             .then(data => setTweets(data));
     }, [hashtag]);
 
-      const handleLogout = () => {
+      const handleLogout = () => { 
         dispatch(logout())
       };
 

@@ -8,14 +8,18 @@
 
 .logo {
   background-color: #151D26;
-  width:50px;
-  height:50px;
+  width:70px;
+  height:70px;
   cursor: pointer;
   rotate: 180deg;
+  margin: 20px;
 }
 
 .leftSection {
   width:30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .rightSection {
@@ -32,3 +36,21 @@
   color: white;
   width:35vw;
 }
+
+.profilPic {
+  height:50px;
+  width: 50px;
+  object-fit:cover;
+  border-radius:50%;
+  margin: 10px;
+}
+
+.userInfo {
+  margin: 20px;
+}
+
+.profil {
+  display: flex;
+  align-items: center;
+}
+

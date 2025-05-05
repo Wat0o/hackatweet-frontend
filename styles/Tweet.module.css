@@ -6,8 +6,7 @@
 
 .author {
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
+  color: white;
 }
 
 .content {
@@ -36,4 +35,19 @@
 
 .btnLike {
   color: white;
+}
+
+.authorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 15px;
+}
+
+.profil {
+  height:50px;
+  width: 50px;
+  object-fit:cover;
+  border-radius:50%;
+  margin: 10px;
 }
