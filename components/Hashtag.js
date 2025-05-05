@@ -19,13 +19,13 @@ function HashtagPage() {
     useEffect(() => {
         if (!hashtag) return;
 
-        fetch(`http://localhost:3000/tweets/hashtag/${hashtag}`)
+        fetch(`https://hackatweet-backend-inky.vercel.app/tweets/hashtag/${hashtag}`)
             .then(res => res.json())
             .then(data => setTweets(data));
     }, [hashtag]);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/tweets')
+        fetch('https://hackatweet-backend-inky.vercel.app/tweets')
         .then(response=>response.json())
         .then(data=> {
           setAllTweets(data.data)

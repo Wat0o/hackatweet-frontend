@@ -4,7 +4,7 @@ import Tweet from './Tweet';
 function LastTweets({ tweets, setTweets, currentUser }) {
 
   const handleDelete = (tweetId) => {
-    fetch(`http://localhost:3000/tweets/${tweetId}`, {
+    fetch(`https://hackatweet-backend-inky.vercel.app/tweets/${tweetId}`, {
       method: 'DELETE'
     }).then(()=>{
       setTweets(tweets.filter(tweet => tweet.id !== tweetId));
@@ -12,7 +12,7 @@ function LastTweets({ tweets, setTweets, currentUser }) {
   };
 
   const handleLike = (tweetId) => {
-    fetch('http://localhost:3000/tweets', {
+    fetch('https://hackatweet-backend-inky.vercel.app/tweets', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({author: currentUser.username, tweetId: tweetId})

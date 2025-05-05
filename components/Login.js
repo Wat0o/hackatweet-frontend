@@ -18,7 +18,7 @@ function Login() {
   const [passwordIn, setPasswordIn] = useState('')
 
   const handleSignup = () => {
-    fetch('http://localhost:3000/users/signup', {
+    fetch('https://hackatweet-backend-inky.vercel.app/users/signup', {
       method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username: usernameUp, password: passwordUp, firstname: firstnameUp }),
@@ -35,7 +35,7 @@ function Login() {
   }
 
   const handleSignin = () => {
-    fetch('http://localhost:3000/users/signin', {
+    fetch('https://hackatweet-backend-inky.vercel.app/users/signin', {
       method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username: usernameIn, password: passwordIn }),

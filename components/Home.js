@@ -16,7 +16,7 @@ function Home() {
   const dispatch = useDispatch()
 
   useEffect(()=>{
-    fetch('http://localhost:3000/tweets')
+    fetch('https://hackatweet-backend-inky.vercel.app/tweets')
     .then(response=>response.json())
     .then(data=> {
       setTweets(data.data)
@@ -31,7 +31,7 @@ function Home() {
 
   const handleTweetSubmit = () => {
     if (tweetContent.trim() && tweetContent.length <= 280) {
-      fetch('http://localhost:3000/tweets', {
+      fetch('https://hackatweet-backend-inky.vercel.app/tweets', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content: tweetContent, author: user.username, firstname: user.firstname }),
